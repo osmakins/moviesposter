@@ -4,7 +4,9 @@
     android:layout_width="120dp"
     android:layout_height="190dp"
     android:layout_margin="@dimen/activity_horizontal_margin"
-    cardview:cardCornerRadius="4dp">
+    cardview:cardCornerRadius="4dp"
+    android:id="@+id/movie_cardview"
+    android:foreground="?android:attr/selectableItemBackground">
 
     <LinearLayout
         android:layout_width="match_parent"

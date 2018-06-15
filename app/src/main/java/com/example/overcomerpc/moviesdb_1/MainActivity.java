@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Placeholder images and texts in arraylist
+
         MovieList = new ArrayList<>();
         MovieList.add(new Movies("#1", "The Avengers", "2008", "7", "And the battle goes on and on for the avengers", R.drawable.avengers));
         MovieList.add(new Movies("#2", "The Desire", "2008", "7", "To lust, to desire and to covet", R.drawable.covet));

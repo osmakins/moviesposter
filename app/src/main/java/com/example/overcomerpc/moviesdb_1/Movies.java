@@ -25,7 +25,7 @@ public class Movies {
     }
 
     public void setId(String Id) {
-        this.mId = Id;
+        mId = Id;
     }
 
     public String getTitle() {
@@ -33,7 +33,7 @@ public class Movies {
     }
 
     public void setTitle(String Title) {
-        this.mTitle = Title;
+        mTitle = Title;
     }
 
     public String getReleaseDate() {
@@ -65,6 +65,6 @@ public class Movies {
     }
 
     public void setPosterPath(int PosterPath) {
-        this.mPosterPath = PosterPath;
+        mPosterPath = PosterPath;
     }
 }

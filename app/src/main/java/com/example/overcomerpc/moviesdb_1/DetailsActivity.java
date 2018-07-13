@@ -6,24 +6,27 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class DetailsActivity extends AppCompatActivity {
 
-    private TextView tv_movie_title, tv_release_date, tv_overview, tv_average_vote;
-    private ImageView iv_movie_poster;
+    @BindView(R.id.title_content) TextView tv_movie_title;
+    @BindView(R.id.release_date_content) TextView tv_release_date;
+    @BindView(R.id.vote_average_content) TextView tv_average_vote;
+    @BindView(R.id.overview_content) TextView tv_overview;
+    @BindView(R.id.image_posterpath) ImageView iv_movie_poster;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        ButterKnife.bind(this);
 
-        // The views
-        tv_movie_title = (TextView) findViewById(R.id.title_content);
-        tv_release_date = (TextView) findViewById(R.id.release_date_content);
-        tv_average_vote = (TextView) findViewById(R.id.vote_average_content);
-        tv_overview = (TextView) findViewById(R.id.overview_content);
-        iv_movie_poster = (ImageView) findViewById(R.id.image_posterpath);
+        setupDetails();
+    }
 
-
+    private void setupDetails(){
         // Receive data
         Intent intent = getIntent();
         String Title = intent.getExtras().getString("Title");

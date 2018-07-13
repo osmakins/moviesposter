@@ -8,14 +8,19 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
 
     List<Movies> MovieList;
+    @BindView(R.id.movies_recyclerview) RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
         // Placeholder images and texts in arraylist
 
@@ -31,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         MovieList.add(new Movies("#9", "Tomb Raiders", "2008", "7", "Who dares raid the tomb? Check it out!", R.drawable.tombraider));
         MovieList.add(new Movies("#10", "Wonder Woman", "2008", "7", "She is just so wonderful. She is wonder woman.", R.drawable.wonderwoman));
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.movies_recyclerview);
         MoviesAdapter moviesAdapter = new MoviesAdapter(this, MovieList);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerView.setAdapter(moviesAdapter);
